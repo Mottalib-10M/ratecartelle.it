@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://it-definizione-agevolata.example/sitemap-index.xml
+Sitemap: https://ratecartelle.it/sitemap-index.xml

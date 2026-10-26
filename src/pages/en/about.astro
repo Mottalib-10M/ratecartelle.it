@@ -8,7 +8,7 @@ import { P } from '../../lib/engine/params';
 const lang = 'en';
 const d = (iso: string) => displayDate(iso, 'en-GB');
 ---
-<PageLayout title="IT Definizione Agevolata, about us: who does the figures" description="Who publishes IT Definizione Agevolata, why a personal calendar of rottamazione instalments, where the dates and rules come from, and how to report an error." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
+<PageLayout title="Rate Cartelle, about us: who does the figures and why" description="Who publishes Rate Cartelle, why a personal calendar of rottamazione instalments, where the dates and rules come from, and how to report an error to us." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
   <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Who publishes {SITE_NAMES[lang]}</h1></header>
   <div class="prose prose-slate max-w-none">
     <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>

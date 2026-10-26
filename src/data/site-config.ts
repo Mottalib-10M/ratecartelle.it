@@ -1,8 +1,8 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://it-definizione-agevolata.example";
-export const SITE_NAMES: Record<string, string> = {"it": "IT Definizione Agevolata", "en": "IT Definizione Agevolata"};
+export const SITE_URL = "https://ratecartelle.it";
+export const SITE_NAMES: Record<string, string> = {"it": "Rate Cartelle", "en": "Rate Cartelle"};
 // Partie du nom affichée en couleur dans l'en-tête (RECETTE §10.3), « » pour aucune.
-export const BRAND_ACCENT = "Agevolata";
+export const BRAND_ACCENT = "Cartelle";
 export const LANG_TAGS: Record<string, string> = {"it": "it-IT", "en": "en-IT"};
 export const OG_LOCALES: Record<string, string> = {"it": "it_IT", "en": "en_GB"};
 export const LOCALE_TAG = 'it-IT';
@@ -20,7 +20,7 @@ export const AUTHOR_DESC: Record<string, string> = {"it": "Radif Partners legge 
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"it": ["Rottamazione-quinquies (legge n. 199/2025, commi 82-101)", "Rottamazione-quinquies dei carichi di regioni e comuni (art. 10-quinquies DL 38/2026)", "Rottamazione-quater e riammissione (legge n. 197/2022, DL 202/2024)", "Decadenza dalla definizione agevolata", "Rateizzazione delle cartelle (art. 19 DPR 602/1973)", "Cartelle esattoriali e carichi affidati all'Agente della riscossione"], "en": ["Italy's rottamazione-quinquies tax-debt settlement", "The settlement of regional and municipal debts (Decree-Law 38/2026)", "Rottamazione-quater and its readmission", "Losing the benefit of an Italian debt settlement", "Ordinary instalment plans for Italian tax bills", "Italian tax-collection notices (cartelle)"]};
-export const CONTACT_EMAIL = "contatti@it-definizione-agevolata.example";
+export const CONTACT_EMAIL = "contatti@ratecartelle.it";
 export const THEME_COLOR = '#9F1D35';
 export const LOGO_SYMBOL = 'DA';
 export const BING_VERIFY_CODE = '';
