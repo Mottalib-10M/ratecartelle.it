@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+import { P } from '../../lib/engine/params';
+const lang = 'it';
+const d = (iso: string) => displayDate(iso, 'it-IT');
+---
+<PageLayout title="IT Definizione Agevolata, chi siamo: chi calcola le tue rate" description="Chi pubblica IT Definizione Agevolata, perché un calendario personale delle rate della rottamazione, da dove vengono date e regole, e come segnalare un errore." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Chi siamo', path: route('about', lang) }])]} breadcrumbs={[{ label: 'Chi siamo' }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Chi pubblica {SITE_NAMES[lang]}</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>{SITE_NAMES[lang]} è pubblicato da Radif Partners. Risponde alle domande di chi ha aderito a una definizione agevolata delle cartelle: quanto pago a ogni rata, entro quale giorno, cosa succede se ne salto una, e cosa mi viene cancellato.</p>
+    <h2>Perché questo sito</h2>
+    <p>Sulla rottamazione si trovano soprattutto articoli che ripetono le date della legge, uguali per tutti. Ma ognuno ha il suo numero di rate, il suo importo e i suoi pagamenti già fatti. Qui il calcolo parte dalla tua situazione: la data e l’ultimo giorno utile di ogni rata, l’importo stimato con gli interessi, un file per il calendario del telefono, la verifica della decadenza con la regola dell’imputazione alla rata più vecchia, il conto di ciò che viene cancellato dalla cartella. E copre anche la quinquies dei debiti di comuni e regioni, con la domanda ancora aperta fino al {d(P.enti.domanda_entro)}.</p>
+    <h2>Da dove vengono le regole</h2>
+    <p>Dalla legge n. 199 del 2025, dal decreto-legge n. 38 del 2026 con le modifiche della legge n. 113 del 2026, dalla legge n. 197 del 2022, dal decreto-legge n. 202 del 2024 e dal DPR n. 602 del 1973, letti in Gazzetta Ufficiale e su Normattiva, e dalle FAQ pubbliche di Agenzia delle entrate-Riscossione. Ultima rilettura: {d(P.retrieved_at)}. Tutto è spiegato nel <a href={route('method', lang)}>metodo</a>.</p>
+    <h2>Cosa non siamo</h2>
+    <p>Radif Partners non è Agenzia delle entrate-Riscossione, l’Agenzia delle entrate, l’INPS, un comune o un ente pubblico, e non è un commercialista né uno studio legale. Non vendiamo nulla, non prendiamo commissioni, non consigliamo professionisti e non chiediamo dati di contatto. Fa fede solo la Comunicazione delle somme dovute che hai ricevuto.</p>
+    <h2>Finanziamento e dati</h2><p>Il sito è gratuito e senza registrazione. I calcoli si fanno nel tuo browser: importi, rate e date che inserisci non vengono inviati né salvati. Se un giorno ci sarà pubblicità, non starà mai sopra il calendario e non venderà consulenze o finanziamenti.</p>
+    <h2>Perché anche in inglese</h2><p>Ogni pagina esiste in italiano e in inglese, per chi vive all’estero con vecchie cartelle italiane e per chi vive in Italia da straniero: le parole della riscossione (carico, ruolo, Comunicazione, decadenza) vengono spiegate.</p>
+    <h2>Scrivici</h2><p>Una data sbagliata, una regola cambiata, un nuovo testo pubblicato: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Vedi anche la <a href={route('editorial', lang)}>politica editoriale</a> e le <a href={route('terms', lang)}>note legali</a>.</p>
+    <p class="text-sm text-navy-600">Testi riletti il <time datetime={P.retrieved_at}>{d(P.retrieved_at)}</time>.</p>
+  </div>
+</PageLayout>

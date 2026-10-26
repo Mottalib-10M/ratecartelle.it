@@ -1,0 +1,24 @@
+---
+/** Pagina da incorporare (iframe): il calendario delle rate senza navigazione. noindex, fuori dalla sitemap (astro.config). */
+import '../../styles/global.css';
+import PianoTool from '../../components/da/PianoTool';
+import { SITE_URL, SITE_NAMES } from '../../data/site-config';
+import { P } from '../../lib/engine/params';
+import { BUILD_TODAY } from '../../lib/today';
+import { displayDate } from '../../lib/format';
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendario delle rate della rottamazione – widget</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={`${SITE_URL}/it/`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+  <body class="bg-white p-2 text-navy-900">
+    <PianoTool client:load lang="it" id="embed" today={BUILD_TODAY} />
+    <p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/it/`} target="_blank" rel="noopener" class="underline">{SITE_NAMES['it']}</a> · testi riletti il {displayDate(P.retrieved_at, 'it-IT')}</p>
+  </body>
+</html>

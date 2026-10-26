@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy – ${SITE_NAMES[lang]}`} description="Where the settlement dates, rates and rules published here come from, who answers for them, when they are reread and what happens when an error is reported to us." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial and corrections policy</h1>
+    <p>A wrong date makes you pay the last instalment late; a wrong rule makes you think you are up to date when you are not. Here is where our information comes from and what we do when something is wrong.</p>
+    <h2>Responsibility</h2><p>{AUTHOR_NAME} answers for every date, rate, rule and calculation in the tools. Anything that does not match its source can be reported to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Primary sources only</h2>
+    <ul>
+      <li><strong>the laws and decrees</strong> that create and amend the settlements, read in the Gazzetta Ufficiale and on Normattiva;</li>
+      <li><strong>the public FAQs and pages of Agenzia delle entrate-Riscossione</strong>, for how the rules are applied (tolerance, allocation of payments, minimum instalment), quoted with their date;</li>
+      <li><strong>Presidential Decree 602 of 1973</strong> for ordinary instalment plans and the cartella.</li>
+    </ul>
+    <p>Nothing comes from accountants, consultancies, forums or press articles. A rule we could not check against a published text is never presented as certain: we say so.</p>
+    <h2>Estimates labelled as estimates</h2><p>Instalment dates are the statutory ones. The amount of each instalment is an estimate, because the law gives no interest formula: we say so next to every amount. We do not anticipate future texts: on a new rottamazione we only write what has been published.</p>
+    <h2>Checks before publication</h2><p>The statutory calendars, the last useful day with public holidays, the minimum instalment, the lapse rules and the FAQ examples are automated tests; an update that breaks them is blocked.</p>
+    <h2>Updates</h2><p>Updates are manual: with each new text in the Gazzetta Ufficiale or new version of the FAQs the parameters are corrected, the tests rerun and the site republished. The date of the last reread is shown on every page.</p>
+    <h2>Handling errors</h2>
+    <ol><li>Check against the official text.</li><li>Parameters or code fixed, a test added.</li><li>New date on the pages concerned.</li></ol>
+    <h2>Independence</h2><p>No commercial link with accountants, tax-assistance centres, lawyers, debt-collection firms or lenders. No sponsored links in the text. Any commercial relationship would be stated clearly.</p>
+    <p>See also the <a href={route('method', lang)}>method</a>. Version: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

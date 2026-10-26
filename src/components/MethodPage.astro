@@ -1,0 +1,97 @@
+---
+/** Metodo e fonti (page de confiance, RECETTE §8.2) : textes appliqués, choix de calcul, tests, limites, mises à jour. */
+import PageLayout from '../layouts/PageLayout.astro';
+import { route, type Locale } from '../i18n/routes';
+import { P } from '../lib/engine/params';
+import * as M from '../lib/engine/index';
+import { formatMoney, formatNumber, formatPercent, displayDate } from '../lib/format';
+import { breadcrumbSchema, webPageSchema, faqSchema } from '../lib/seo';
+import { CONTACT_EMAIL } from '../data/site-config';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const it = lang === 'it';
+const tag = it ? 'it-IT' : 'en-GB';
+const $ = (n: number, d = 2) => formatMoney(n, d, lang);
+const n0 = (x: number) => formatNumber(x, 0, lang);
+const pc = (x: number, d = 0) => formatPercent(x, d, lang);
+const d = (iso: string) => displayDate(iso, tag);
+const title = it ? 'Metodo: come calcoliamo rate, scadenze e decadenza' : 'Method: how instalments, due dates and lapse are worked out';
+const description = it ? 'Metodo del calendario delle rate: calendari di legge, ultimo giorno utile con i festivi, stima degli interessi del 3%, rata minima, decadenza, test e limiti.' : 'How the instalment calendar works: statutory calendars, last useful day with holidays, the 3% interest estimate, minimum instalment, lapse rules, tests, limits.';
+const h1 = it ? 'Metodo e fonti' : 'Method and sources';
+const path = route('method', lang);
+const sources = Object.values(P.sources);
+const Q = P.quinquies;
+const p = M.piano('quinquies', 10000, 54);
+const r3 = p.rate[2];
+const q = M.piano('quater', 10000, 18);
+const ri = M.piano('riammissione', 10000, 1);
+const faqs = it ? [
+  { q: 'Perché l’importo della mia rata è diverso da quello del calendario?', a: `La legge fissa il tasso del ${pc(Q.interesse)}, la decorrenza dal ${d(Q.interessi_dal)} e rate di pari ammontare, ma non scrive come si contano i giorni né come si arrotonda. Il calendario usa interessi semplici per periodo sul debito residuo e rate costanti; l’Agente della riscossione può contare in un altro modo. Le differenze sono di pochi euro a rata, ma vale sempre l’importo della Comunicazione.` },
+  { q: 'Come viene calcolato l’ultimo giorno utile quando c’è un festivo?', a: 'La scadenza si sposta al primo giorno lavorativo, poi si aggiungono i cinque giorni di tolleranza, e se il quinto giorno cade di sabato, domenica o in un festivo nazionale si va al giorno lavorativo successivo. È il conto che porta il 15 settembre 2024 al 23 settembre 2024 nella prassi dell’Agente della riscossione. Il calendario considera i festivi nazionali, lunedì dell’Angelo compreso, non i patroni locali.' },
+  { q: 'Il sito conserva le cifre che inserisco per calcolare le rate?', a: 'No. Tutti i calcoli girano nel browser con il codice della pagina: importi, rate e stato dei pagamenti non vengono inviati a nessun server. Il file del calendario viene creato sul tuo dispositivo. Se usi il link di condivisione, le tue scelte finiscono nell’indirizzo della pagina e le vede solo chi riceve il link.' },
+] : [
+  { q: 'Why is my instalment different from the one in the calendar?', a: `The law sets the ${pc(Q.interesse)} rate, the start date of ${d(Q.interessi_dal)} and equal instalments, but does not say how days are counted or how figures are rounded. The calendar uses simple interest per period on the outstanding balance and equal instalments; the collection agency may count differently. The gap is a few euros per instalment, but the amount in the statement always prevails.` },
+  { q: 'How is the last useful day worked out when there is a public holiday?', a: 'The due date moves to the next working day, then the five-day tolerance is added, and if the fifth day is a Saturday, Sunday or national public holiday it moves to the next working day. That count takes 15 September 2024 to 23 September 2024 in the collection agency’s practice. The calendar includes national holidays, Easter Monday included, but not local patron-saint days.' },
+  { q: 'Does the site keep the figures I type to work out instalments?', a: 'No. Every calculation runs in the browser with the page’s own code: amounts, instalments and payment status are sent to no server. The calendar file is created on your device. If you use the share link, your choices go into the page address and only the people you send it to can see them.' },
+];
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: h1, description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: h1, path }]), faqSchema(faqs, lang)]} faqs={faqs} breadcrumbs={[{ label: h1 }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{h1}</h1></header>
+  {it ? (
+  <div class="prose prose-slate max-w-none">
+    <p>Gli strumenti applicano testi di legge: la legge n. 199 del 2025 (commi da 82 a 110), l’articolo 10-quinquies del decreto-legge n. 38 del 2026 come modificato dalla legge n. 113 del 2026, la legge n. 197 del 2022 (commi da 222 a 252), l’articolo 3-bis del decreto-legge n. 202 del 2024 e il DPR n. 602 del 1973, riletti il {d(P.retrieved_at)}, con le FAQ pubbliche di Agenzia delle entrate-Riscossione per la prassi. Ogni data, tasso e soglia viene dal file <code>src/data/params-2026.json</code>; nessuna pagina scrive un numero a mano.</p>
+    <h2>I calendari</h2>
+    <p>Le date delle rate sono copiate dai testi: {n0(Q.max_rate)} rate per la quinquies dal {d(Q.dates[0])} al {d(Q.dates[53])}, {n0(P.enti.max_rate)} per la quinquies degli enti dal {d(P.enti.dates[0])} al {d(P.enti.dates[53])}, {n0(P.quater.max_rate)} per la quater fino al {d(P.quater.dates[17])}, {n0(P.riammissione.max_rate)} per la riammissione fino al {d(P.riammissione.dates[9])}. Chi ha scelto meno rate segue le prime date del calendario. Le proroghe del 2024 della quater (prime tre rate al 15 marzo 2024, quinta al 15 settembre 2024) sono citate nelle pagine ma il calendario mostra le date ordinarie.</p>
+    <h2>L’ultimo giorno utile</h2>
+    <p>Alla scadenza si applica la lettura dell’Agente della riscossione: spostamento al primo giorno lavorativo, cinque giorni di tolleranza, nuovo spostamento se il quinto giorno è festivo. I festivi sono quelli nazionali (1° e 6 gennaio, lunedì dell’Angelo, 25 aprile, 1° maggio, 2 giugno, 15 agosto, 1° novembre, 8, 25 e 26 dicembre) più sabati e domeniche. Esempi verificati: {d(Q.unica)} diventa {d(M.ultimoGiorno(Q.unica))} come nelle FAQ; 15 settembre 2024 diventa {d(M.ultimoGiorno('2024-09-15'))}; {d(Q.dates[2])} diventa {d(M.ultimoGiorno(Q.dates[2]))}.</p>
+    <h2>La stima degli importi</h2>
+    <p>La legge chiede rate di pari ammontare con gli interessi del {pc(Q.interesse)} dal {d(Q.interessi_dal)} (quinquies) o dal {d(P.enti.interessi_dal)} (enti) e del {pc(P.quater.interesse)} dal {d(P.quater.interessi_dal)} (quater e riammissione). Il calendario calcola per ogni periodo un interesse semplice sul residuo (tasso annuo per mesi trascorsi diviso dodici) e cerca la rata costante che azzera il debito; l’ultima rata chiude gli arrotondamenti. La prima rata della quinquies e degli enti cade prima dell’inizio degli interessi. Esempio: {$(10000, 0)} in {n0(54)} rate danno {$(p.rate[0].importo)} a rata, di cui {$(r3.interessi)} di interessi nella terza, e {$(p.interessi)} di interessi in tutto. Per la quater le prime due rate valgono il 10% delle somme dovute e le altre sedici sono costanti: {$(q.rate[2].importo)} su {$(10000, 0)}. La riammissione in unica soluzione porta gli interessi dal 1° novembre 2023: {$(ri.totale)} su {$(10000, 0)}. Se una rata scende sotto {$(Q.rata_minima, 0)}, il numero di rate si riduce finché tutte superano la soglia, come dicono le FAQ.</p>
+    <h2>La decadenza</h2>
+    <p>Quinquies ed enti: decade chi non paga, o paga in parte, l’unica rata, due rate anche non consecutive, oppure l’ultima; il ritardo oltre cinque giorni conta solo per l’unica e per l’ultima (comma 95 come modificato). Un pagamento copre la rata più vecchia rimasta aperta (FAQ n. 12), quindi una rata saltata e mai recuperata rende scoperta l’ultima. Quater e riammissione: basta una rata non pagata, insufficiente o oltre i cinque giorni (comma 244). La verifica conta le rate già scadute alla data di oggi, secondo il loro ultimo giorno utile.</p>
+    <h2>Risparmio e rateizzazione</h2>
+    <p>Il calcolo del risparmio non stima le voci della cartella: le leggi dal documento che inserisci. Per imposte, contributi e tributi locali si pagano capitale e spese e si cancellano sanzioni, interessi, mora e aggio; per le multe la sanzione resta e si cancellano interessi, maggiorazioni e aggio. La rateizzazione ordinaria usa una rata mensile costante al {pc(P.rateizzazione.tasso_erariale, 1)} per i debiti erariali e al {pc(P.rateizzazione.tasso_inps, 2)} per quelli INPS, i limiti di rate per anno della richiesta e la soglia di {$(P.rateizzazione.soglia_semplice, 0)}.</p>
+    <h2>I test</h2>
+    <p>Calendari, ultimo giorno utile, rata minima, piani della quater e della riammissione, casi di decadenza delle FAQ, risparmio e limiti della rateizzazione sono test automatici (<code>src/lib/engine/definizione.test.ts</code>), rieseguiti a ogni pubblicazione: un test fallito la blocca.</p>
+    <h2>Cosa il sito non fa</h2>
+    <ul>
+      <li>Non legge le tue cartelle né il tuo piano: lavora solo su ciò che inserisci; fa fede la Comunicazione.</li>
+      <li>Non dice se un carico è prescritto o se una cartella è valida.</li>
+      <li>Non anticipa una nuova rottamazione: al {d(P.sexies.verificato_il)} nessun testo è pubblicato.</li>
+      <li>Non vende consulenze, pratiche o finanziamenti e non chiede account, e-mail o numero di telefono.</li>
+    </ul>
+    <h2>Aggiornamenti</h2>
+    <p>Gli aggiornamenti sono manuali, perché i dati cambiano solo quando esce un nuovo testo o una nuova versione delle FAQ: si correggono i parametri, si rieseguono i test, si ripubblica. Ultima rilettura: {d(P.retrieved_at)}. Un errore segnalato a <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> viene verificato sulla fonte, corretto e trasformato in test. Vedi la <a href={route('editorial', lang)}>politica editoriale</a>.</p>
+    <h2>Tutte le fonti</h2>
+    <ul>{sources.map((s) => <li><a href={s.url} rel="nofollow noopener" target="_blank">{s.label.it}</a></li>)}</ul>
+    <p class="text-sm text-navy-600">Testi riletti il <time datetime={P.retrieved_at}>{d(P.retrieved_at)}</time>.</p>
+  </div>
+  ) : (
+  <div class="prose prose-slate max-w-none">
+    <p>The tools apply legal texts: Law 199 of 2025 (paragraphs 82 to 110), article 10-quinquies of Decree-Law 38 of 2026 as amended by Law 113 of 2026, Law 197 of 2022 (paragraphs 222 to 252), article 3-bis of Decree-Law 202 of 2024 and Presidential Decree 602 of 1973, reread on {d(P.retrieved_at)}, with the public FAQs of Agenzia delle entrate-Riscossione for practice. Every date, rate and threshold comes from <code>src/data/params-2026.json</code>; no page types a figure by hand.</p>
+    <h2>The calendars</h2>
+    <p>Instalment dates are copied from the texts: {n0(Q.max_rate)} instalments for the quinquies from {d(Q.dates[0])} to {d(Q.dates[53])}, {n0(P.enti.max_rate)} for the local-authority quinquies from {d(P.enti.dates[0])} to {d(P.enti.dates[53])}, {n0(P.quater.max_rate)} for the quater up to {d(P.quater.dates[17])}, {n0(P.riammissione.max_rate)} for the readmission up to {d(P.riammissione.dates[9])}. Anyone who chose fewer instalments follows the first dates of the calendar. The 2024 quater extensions (first three instalments to 15 March 2024, fifth to 15 September 2024) are quoted on the pages, but the calendar shows the ordinary dates.</p>
+    <h2>The last useful day</h2>
+    <p>The collection agency’s reading is applied to each due date: move to the next working day, add the five-day tolerance, move again if the fifth day is a holiday. Holidays are the national ones (1 and 6 January, Easter Monday, 25 April, 1 May, 2 June, 15 August, 1 November, 8, 25 and 26 December) plus Saturdays and Sundays. Checked examples: {d(Q.unica)} becomes {d(M.ultimoGiorno(Q.unica))} as in the FAQs; 15 September 2024 becomes {d(M.ultimoGiorno('2024-09-15'))}; {d(Q.dates[2])} becomes {d(M.ultimoGiorno(Q.dates[2]))}.</p>
+    <h2>Estimating the amounts</h2>
+    <p>The law requires equal instalments with {pc(Q.interesse)} interest from {d(Q.interessi_dal)} (quinquies) or {d(P.enti.interessi_dal)} (local authorities) and {pc(P.quater.interesse)} from {d(P.quater.interessi_dal)} (quater and readmission). For each period the calendar charges simple interest on the balance (annual rate times months elapsed over twelve) and finds the equal instalment that clears the debt; the last instalment absorbs rounding. The first quinquies and local instalments fall before interest starts. Example: {$(10000, 0)} over {n0(54)} instalments gives {$(p.rate[0].importo)} each, of which {$(r3.interessi)} is interest in the third, and {$(p.interessi)} of interest overall. For the quater the first two instalments are 10% of the sum due and the other sixteen are equal: {$(q.rate[2].importo)} on {$(10000, 0)}. A single readmission payment carries interest from 1 November 2023: {$(ri.totale)} on {$(10000, 0)}. If an instalment falls below {$(Q.rata_minima, 0)}, the number of instalments is reduced until every one clears the threshold, as the FAQs say.</p>
+    <h2>Lapsing</h2>
+    <p>Quinquies and local authorities: you lapse by failing to pay, or underpaying, the single payment, two instalments whether consecutive or not, or the last one; lateness beyond five days counts only for the single and the last (paragraph 95 as amended). A payment covers the oldest open instalment (FAQ 12), so a skipped instalment never made up leaves the last one uncovered. Quater and readmission: a single instalment unpaid, short or over five days late is enough (paragraph 244). The check counts instalments already due at today’s date, by their last useful day.</p>
+    <h2>Savings and instalment plans</h2>
+    <p>The savings calculation does not estimate the items on the bill: it reads them from the document you enter. For taxes, contributions and local taxes you pay principal and costs and penalties, interest, late interest and the fee are written off; for fines the penalty stays and interest, surcharges and the fee are written off. The ordinary instalment plan uses an equal monthly instalment at {pc(P.rateizzazione.tasso_erariale, 1)} for tax debts and {pc(P.rateizzazione.tasso_inps, 2)} for INPS debts, the instalment caps by year of request and the {$(P.rateizzazione.soglia_semplice, 0)} threshold.</p>
+    <h2>The tests</h2>
+    <p>Calendars, last useful day, minimum instalment, quater and readmission plans, the FAQ lapse cases, savings and instalment-plan caps are automated tests (<code>src/lib/engine/definizione.test.ts</code>), rerun at every publication: a failing test blocks it.</p>
+    <h2>What the site does not do</h2>
+    <ul>
+      <li>It does not read your bills or your plan: it works only on what you enter; the statement is binding.</li>
+      <li>It does not say whether a debt is time-barred or whether a bill is valid.</li>
+      <li>It does not anticipate a new rottamazione: as of {d(P.sexies.verificato_il)} no text has been published.</li>
+      <li>It sells no advice, paperwork service or loan and asks for no account, email or phone number.</li>
+    </ul>
+    <h2>Updates</h2>
+    <p>Updates are manual, because the data only changes when a new text or a new version of the FAQs comes out: parameters are corrected, tests rerun and the site republished. Last reread: {d(P.retrieved_at)}. An error reported to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> is checked against the source, fixed and turned into a test. See the <a href={route('editorial', lang)}>editorial policy</a>.</p>
+    <h2>All sources</h2>
+    <ul>{sources.map((s) => <li><a href={s.url} rel="nofollow noopener" target="_blank">{s.label.en}</a></li>)}</ul>
+    <p class="text-sm text-navy-600">Texts reread on <time datetime={P.retrieved_at}>{d(P.retrieved_at)}</time>.</p>
+  </div>
+  )}
+</PageLayout>

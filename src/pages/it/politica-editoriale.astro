@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'it';
+---
+<PageLayout title={`Politica editoriale – ${SITE_NAMES[lang]}`} description="Da dove vengono date, tassi e regole della definizione agevolata pubblicati qui, chi ne risponde, quando vengono riletti e cosa succede quando si segnala un errore." lang={lang} noindex={true} breadcrumbs={[{ label: 'Politica editoriale' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Politica editoriale e delle correzioni</h1>
+    <p>Una data sbagliata fa pagare tardi l’ultima rata; una regola sbagliata fa credere di essere in regola quando non lo si è. Ecco da dove vengono le nostre informazioni e cosa facciamo quando una è sbagliata.</p>
+    <h2>Responsabilità</h2><p>{AUTHOR_NAME} risponde di ogni data, tasso, regola e calcolo degli strumenti. Un dato che non corrisponde alla sua fonte si segnala a <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Solo fonti primarie</h2>
+    <ul>
+      <li><strong>le leggi e i decreti</strong> che istituiscono e modificano le definizioni agevolate, letti in Gazzetta Ufficiale e su Normattiva;</li>
+      <li><strong>le FAQ e le pagine pubbliche di Agenzia delle entrate-Riscossione</strong>, per la prassi applicativa (tolleranza, imputazione dei pagamenti, rata minima), citate con la loro data;</li>
+      <li><strong>il DPR n. 602 del 1973</strong> per la rateizzazione ordinaria e la cartella.</li>
+    </ul>
+    <p>Nessuna informazione viene da commercialisti, società di consulenza, forum o articoli di stampa. Una regola che non abbiamo potuto verificare su un testo pubblicato non viene presentata come certa: lo diciamo.</p>
+    <h2>Stime dichiarate come stime</h2><p>Le date delle rate sono quelle di legge. L’importo di ogni rata è una stima, perché la legge non scrive la formula degli interessi: lo diciamo accanto a ogni importo. Non anticipiamo testi futuri: su una nuova rottamazione scriviamo solo ciò che è pubblicato.</p>
+    <h2>Controlli prima della pubblicazione</h2><p>I calendari di legge, l’ultimo giorno utile con i festivi, la rata minima, le regole della decadenza e gli esempi delle FAQ sono test automatici; un aggiornamento che li fa fallire viene bloccato.</p>
+    <h2>Aggiornamenti</h2><p>Gli aggiornamenti sono manuali: a ogni nuovo testo in Gazzetta Ufficiale o nuova versione delle FAQ si correggono i parametri, si rieseguono i test e si ripubblica. La data dell’ultima rilettura è scritta in ogni pagina.</p>
+    <h2>Gestione degli errori</h2>
+    <ol><li>Verifica sul testo ufficiale.</li><li>Parametri o codice corretti, un test aggiunto.</li><li>Nuova data sulle pagine interessate.</li></ol>
+    <h2>Indipendenza</h2><p>Nessun legame commerciale con commercialisti, CAF, avvocati, società di recupero o finanziarie. Nessun link sponsorizzato nei testi. Un eventuale rapporto commerciale verrebbe dichiarato chiaramente.</p>
+    <p>Vedi anche il <a href={route('method', lang)}>metodo</a>. Versione: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

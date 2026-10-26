@@ -1,0 +1,22 @@
+---
+/** Aiguillage vers l'outil principal d'une page (src/content/pagine : `tool` et `outil`). */
+import PianoTool from './PianoTool';
+import ScadenzeTool from './ScadenzeTool';
+import DecadenzaTool from './DecadenzaTool';
+import RisparmioTool from './RisparmioTool';
+import AmmissibilitaTool from './AmmissibilitaTool';
+import RateizzazioneTool from './RateizzazioneTool';
+import PagamentoTool from './PagamentoTool';
+import { BUILD_TODAY } from '../../lib/today';
+import type { Tool } from '../../lib/guide-types';
+interface Props { tool: Tool; lang: 'it' | 'en'; id: string; opts?: Record<string, unknown>; methodHref?: string }
+const { tool, lang, id, opts = {}, methodHref } = Astro.props;
+const o = opts as any;
+---
+{tool === 'piano' && <PianoTool client:load lang={lang} id={id} today={BUILD_TODAY} methodHref={methodHref} {...o} />}
+{tool === 'scadenze' && <ScadenzeTool client:load lang={lang} id={id} today={BUILD_TODAY} methodHref={methodHref} {...o} />}
+{tool === 'decadenza' && <DecadenzaTool client:load lang={lang} id={id} today={BUILD_TODAY} methodHref={methodHref} {...o} />}
+{tool === 'risparmio' && <RisparmioTool client:load lang={lang} id={id} methodHref={methodHref} {...o} />}
+{tool === 'ammissibilita' && <AmmissibilitaTool client:load lang={lang} id={id} today={BUILD_TODAY} methodHref={methodHref} {...o} />}
+{tool === 'rateizzazione' && <RateizzazioneTool client:load lang={lang} id={id} today={BUILD_TODAY} methodHref={methodHref} {...o} />}
+{tool === 'pagamento' && <PagamentoTool client:load lang={lang} id={id} today={BUILD_TODAY} methodHref={methodHref} {...o} />}

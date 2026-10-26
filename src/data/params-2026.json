@@ -1,0 +1,540 @@
+{
+ "_comment": "Paramètres des définitions agevolate italiennes relus le 2026-10-26 aux textes officiels (Gazzetta Ufficiale, Normattiva, FAQ et pages d'Agenzia delle entrate-Riscossione). Les textes de loi ne sont pas protégés par le droit d'auteur (art. 5 L. 633/1941) ; les contenus du site ADER le sont : seuls des faits et des dates en sont tirés, jamais de tableaux recopiés. Mise à jour manuelle : relire les sources de 'sources' à chaque nouveau texte, corriger ce fichier, relancer les tests.",
+ "year": 2026,
+ "retrieved_at": "2026-10-26",
+ "tolerance_days": 5,
+ "quinquies": {
+  "label": "Rottamazione-quinquies",
+  "norma": "art. 1, commi 82-101, L. 199/2025",
+  "carichi_dal": "2000-01-01",
+  "carichi_al": "2023-12-31",
+  "domanda_entro": "2026-04-30",
+  "comunicazione_entro": "2026-06-30",
+  "unica": "2026-07-31",
+  "unica_ultimo_giorno_faq": "2026-08-05",
+  "max_rate": 54,
+  "rata_minima": 100,
+  "interesse": 0.03,
+  "interessi_dal": "2026-08-01",
+  "dilazioni_revocate": "2026-07-31",
+  "quater_in_regola_al": "2025-09-30",
+  "dates": [
+   "2026-07-31",
+   "2026-09-30",
+   "2026-11-30",
+   "2027-01-31",
+   "2027-03-31",
+   "2027-05-31",
+   "2027-07-31",
+   "2027-09-30",
+   "2027-11-30",
+   "2028-01-31",
+   "2028-03-31",
+   "2028-05-31",
+   "2028-07-31",
+   "2028-09-30",
+   "2028-11-30",
+   "2029-01-31",
+   "2029-03-31",
+   "2029-05-31",
+   "2029-07-31",
+   "2029-09-30",
+   "2029-11-30",
+   "2030-01-31",
+   "2030-03-31",
+   "2030-05-31",
+   "2030-07-31",
+   "2030-09-30",
+   "2030-11-30",
+   "2031-01-31",
+   "2031-03-31",
+   "2031-05-31",
+   "2031-07-31",
+   "2031-09-30",
+   "2031-11-30",
+   "2032-01-31",
+   "2032-03-31",
+   "2032-05-31",
+   "2032-07-31",
+   "2032-09-30",
+   "2032-11-30",
+   "2033-01-31",
+   "2033-03-31",
+   "2033-05-31",
+   "2033-07-31",
+   "2033-09-30",
+   "2033-11-30",
+   "2034-01-31",
+   "2034-03-31",
+   "2034-05-31",
+   "2034-07-31",
+   "2034-09-30",
+   "2034-11-30",
+   "2035-01-31",
+   "2035-03-31",
+   "2035-05-31"
+  ]
+ },
+ "enti": {
+  "label": "Rottamazione-quinquies enti territoriali",
+  "norma": "art. 10-quinquies DL 38/2026 (L. 88/2026, modificato dalla L. 113/2026)",
+  "carichi_dal": "2000-01-01",
+  "carichi_al": "2023-12-31",
+  "provvedimenti_entro": "2026-07-31",
+  "dati_dal": "2026-10-15",
+  "domanda_dal": "2026-10-16",
+  "domanda_entro": "2026-12-15",
+  "comunicazione_entro": "2027-02-28",
+  "unica": "2027-03-31",
+  "max_rate": 54,
+  "rata_minima": 100,
+  "interesse": 0.03,
+  "interessi_dal": "2027-04-01",
+  "dilazioni_revocate": "2027-03-31",
+  "elenco": {
+   "aggiornato": "2026-10-05",
+   "regioni": 5,
+   "province_citta_metropolitane": 11,
+   "comuni": 1471,
+   "unioni": 4
+  },
+  "dates": [
+   "2027-03-31",
+   "2027-05-31",
+   "2027-07-31",
+   "2027-09-30",
+   "2027-11-30",
+   "2028-01-31",
+   "2028-03-31",
+   "2028-05-31",
+   "2028-07-31",
+   "2028-09-30",
+   "2028-11-30",
+   "2029-01-31",
+   "2029-03-31",
+   "2029-05-31",
+   "2029-07-31",
+   "2029-09-30",
+   "2029-11-30",
+   "2030-01-31",
+   "2030-03-31",
+   "2030-05-31",
+   "2030-07-31",
+   "2030-09-30",
+   "2030-11-30",
+   "2031-01-31",
+   "2031-03-31",
+   "2031-05-31",
+   "2031-07-31",
+   "2031-09-30",
+   "2031-11-30",
+   "2032-01-31",
+   "2032-03-31",
+   "2032-05-31",
+   "2032-07-31",
+   "2032-09-30",
+   "2032-11-30",
+   "2033-01-31",
+   "2033-03-31",
+   "2033-05-31",
+   "2033-07-31",
+   "2033-09-30",
+   "2033-11-30",
+   "2034-01-31",
+   "2034-03-31",
+   "2034-05-31",
+   "2034-07-31",
+   "2034-09-30",
+   "2034-11-30",
+   "2035-01-31",
+   "2035-03-31",
+   "2035-05-31",
+   "2035-07-31",
+   "2035-09-30",
+   "2035-11-30",
+   "2036-01-31"
+  ],
+  "unica_ultimo_giorno_faq": "2027-04-05"
+ },
+ "quater": {
+  "label": "Rottamazione-quater",
+  "norma": "art. 1, commi 231-252, L. 197/2022",
+  "carichi_dal": "2000-01-01",
+  "carichi_al": "2022-06-30",
+  "unica": "2023-10-31",
+  "max_rate": 18,
+  "prime_due_quota": 0.1,
+  "interesse": 0.02,
+  "interessi_dal": "2023-11-01",
+  "dates": [
+   "2023-10-31",
+   "2023-11-30",
+   "2024-02-28",
+   "2024-05-31",
+   "2024-07-31",
+   "2024-11-30",
+   "2025-02-28",
+   "2025-05-31",
+   "2025-07-31",
+   "2025-11-30",
+   "2026-02-28",
+   "2026-05-31",
+   "2026-07-31",
+   "2026-11-30",
+   "2027-02-28",
+   "2027-05-31",
+   "2027-07-31",
+   "2027-11-30"
+  ],
+  "proroghe": [
+   {
+    "rate": [
+     1,
+     2,
+     3
+    ],
+    "entro": "2024-03-15",
+    "fonte": "l18"
+   },
+   {
+    "rate": [
+     5
+    ],
+    "entro": "2024-09-15",
+    "ultimo_giorno_ader": "2024-09-23",
+    "fonte": "gu182"
+   }
+  ]
+ },
+ "riammissione": {
+  "label": "Riammissione alla Rottamazione-quater",
+  "norma": "art. 3-bis DL 202/2024 (L. 15/2025)",
+  "decaduti_al": "2024-12-31",
+  "domanda_entro": "2025-04-30",
+  "comunicazione_entro": "2025-06-30",
+  "unica": "2025-07-31",
+  "max_rate": 10,
+  "interesse": 0.02,
+  "interessi_dal": "2023-11-01",
+  "dates": [
+   "2025-07-31",
+   "2025-11-30",
+   "2026-02-28",
+   "2026-05-31",
+   "2026-07-31",
+   "2026-11-30",
+   "2027-02-28",
+   "2027-05-31",
+   "2027-07-31",
+   "2027-11-30"
+  ]
+ },
+ "stralcio": {
+  "soglia": 1000,
+  "carichi_dal": "2000-01-01",
+  "carichi_al": "2015-12-31",
+  "annullamento_stato": "2023-04-30"
+ },
+ "rateizzazione": {
+  "soglia_semplice": 120000,
+  "rata_minima": 50,
+  "semplice": [
+   {
+    "dal": "2025-01-01",
+    "al": "2026-12-31",
+    "max": 84
+   },
+   {
+    "dal": "2027-01-01",
+    "al": "2028-12-31",
+    "max": 96
+   },
+   {
+    "dal": "2029-01-01",
+    "al": "9999-12-31",
+    "max": 108
+   }
+  ],
+  "documentata_max": 120,
+  "tasso_erariale": 0.045,
+  "tasso_inps": 0.0465,
+  "decadenza_rate": [
+   {
+    "richieste_dal": "2022-07-16",
+    "rate": 8
+   },
+   {
+    "richieste_dal": "2022-01-01",
+    "rate": 5
+   },
+   {
+    "richieste_dal": "2020-03-09",
+    "rate": 10
+   },
+   {
+    "richieste_dal": "2000-01-01",
+    "rate": 18
+   }
+  ]
+ },
+ "pagamento_cartella_giorni": 60,
+ "aggio_abolito_dal": "2022-01-01",
+ "sexies": {
+  "testo_pubblicato": false,
+  "verificato_il": "2026-10-26"
+ },
+ "sources": {
+  "l199": {
+   "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-12-30;199",
+   "label": {
+    "it": "Legge 30 dicembre 2025, n. 199, art. 1, commi 82-110 (Rottamazione-quinquies), testo vigente su Normattiva",
+    "en": "Law 199 of 30 December 2025, article 1, paragraphs 82-110 (rottamazione-quinquies), current text on Normattiva"
+   }
+  },
+  "l199gu": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/gruppo/LEGGE_199_2025.pdf",
+   "label": {
+    "it": "Legge n. 199/2025, Gazzetta Ufficiale n. 301 del 30 dicembre 2025 (copia pubblicata da Agenzia delle entrate-Riscossione)",
+    "en": "Law 199/2025, Gazzetta Ufficiale no. 301 of 30 December 2025 (copy published by Agenzia delle entrate-Riscossione)"
+   }
+  },
+  "dl38": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/gruppo/GU-TESTO-DL-n38_2026-COORDINATO-CON-L-n88_2026-di-conversione.pdf",
+   "label": {
+    "it": "Decreto-legge 27 marzo 2026, n. 38, coordinato con la legge di conversione 22 maggio 2026, n. 88 (Gazzetta Ufficiale n. 117 del 22 maggio 2026), art. 10-quinquies",
+    "en": "Decree-Law 38 of 27 March 2026, consolidated with conversion Law 88 of 22 May 2026 (Gazzetta Ufficiale no. 117), article 10-quinquies"
+   }
+  },
+  "l113": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/gruppo/GU-147_27062026.pdf",
+   "label": {
+    "it": "Legge 25 giugno 2026, n. 113, art. 1-sexies, comma 3 (Gazzetta Ufficiale n. 147 del 27 giugno 2026): nuove date per i carichi di regioni ed enti locali",
+    "en": "Law 113 of 25 June 2026, article 1-sexies, paragraph 3 (Gazzetta Ufficiale no. 147 of 27 June 2026): new dates for regional and local debts"
+   }
+  },
+  "l197": {
+   "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2022-12-29;197",
+   "label": {
+    "it": "Legge 29 dicembre 2022, n. 197, art. 1, commi 222-252 (stralcio e Rottamazione-quater), testo vigente su Normattiva",
+    "en": "Law 197 of 29 December 2022, article 1, paragraphs 222-252 (write-off and rottamazione-quater), current text on Normattiva"
+   }
+  },
+  "l197gu": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/gruppo/GU-N303-DEL-29-12-2022.pdf",
+   "label": {
+    "it": "Legge n. 197/2022, Gazzetta Ufficiale n. 303 del 29 dicembre 2022 (copia pubblicata da Agenzia delle entrate-Riscossione)",
+    "en": "Law 197/2022, Gazzetta Ufficiale no. 303 of 29 December 2022 (copy published by Agenzia delle entrate-Riscossione)"
+   }
+  },
+  "l87": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/GU-L-n.-87_2023-conversione-DL-n.-51_2023.pdf",
+   "label": {
+    "it": "Legge 3 luglio 2023, n. 87, di conversione del decreto-legge n. 51/2023: date della Rottamazione-quater",
+    "en": "Law 87 of 3 July 2023 converting Decree-Law 51/2023: rottamazione-quater dates"
+   }
+  },
+  "l18": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/Decreto-Milleproroghe-convertito-nella-Legge-18_2024.pdf",
+   "label": {
+    "it": "Decreto Milleproroghe convertito dalla legge n. 18/2024: rate della Rottamazione-quater fino al 15 marzo 2024",
+    "en": "Milleproroghe decree converted by Law 18/2024: rottamazione-quater instalments until 15 March 2024"
+   }
+  },
+  "gu182": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/gruppo/GU-182_2024.pdf",
+   "label": {
+    "it": "Decreto legislativo n. 108/2024 (Gazzetta Ufficiale n. 182 del 5 agosto 2024): quinta rata della Rottamazione-quater al 15 settembre 2024",
+    "en": "Legislative Decree 108/2024 (Gazzetta Ufficiale no. 182 of 5 August 2024): fifth rottamazione-quater instalment moved to 15 September 2024"
+   }
+  },
+  "dl202": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/gruppo/GU-Testo-DL-n.-202_2024-coordinato-con-L-n.-15_2025-di-conversione.pdf",
+   "label": {
+    "it": "Decreto-legge 27 dicembre 2024, n. 202, coordinato con la legge 21 febbraio 2025, n. 15, art. 3-bis (riammissione alla Rottamazione-quater)",
+    "en": "Decree-Law 202 of 27 December 2024, consolidated with Law 15 of 21 February 2025, article 3-bis (readmission to rottamazione-quater)"
+   }
+  },
+  "dpr602": {
+   "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.presidente.della.repubblica:1973-09-29;602",
+   "label": {
+    "it": "DPR 29 settembre 1973, n. 602 (riscossione delle imposte: artt. 12, 19, 21, 25, 30), testo vigente su Normattiva",
+    "en": "Presidential Decree 602 of 29 September 1973 (tax collection: articles 12, 19, 21, 25, 30), current text on Normattiva"
+   }
+  },
+  "dlgs110": {
+   "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2024-07-29;110",
+   "label": {
+    "it": "Decreto legislativo 29 luglio 2024, n. 110, art. 13 (nuova rateizzazione dal 2025), testo vigente su Normattiva",
+    "en": "Legislative Decree 110 of 29 July 2024, article 13 (new instalment plans from 2025), current text on Normattiva"
+   }
+  },
+  "l234": {
+   "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2021-12-30;234",
+   "label": {
+    "it": "Legge 30 dicembre 2021, n. 234, art. 1, commi 15-17 (fine dell'aggio dal 2022), testo vigente su Normattiva",
+    "en": "Law 234 of 30 December 2021, article 1, paragraphs 15-17 (end of the collection fee from 2022), current text on Normattiva"
+   }
+  },
+  "l145": {
+   "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2018-12-30;145",
+   "label": {
+    "it": "Legge 30 dicembre 2018, n. 145, art. 1, commi 184-198 (saldo e stralcio), testo vigente su Normattiva",
+    "en": "Law 145 of 30 December 2018, article 1, paragraphs 184-198 (saldo e stralcio), current text on Normattiva"
+   }
+  },
+  "aderQuinquies": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/it/Per-saperne-di-piu/definizione-agevolata-rottamazione-quinquies/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: Rottamazione-quinquies",
+    "en": "Agenzia delle entrate-Riscossione: rottamazione-quinquies"
+   }
+  },
+  "aderQuinquiesAmbito": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata-rottamazione-quinquies/ambito-applicativo/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: Rottamazione-quinquies, ambito applicativo",
+    "en": "Agenzia delle entrate-Riscossione: rottamazione-quinquies, scope"
+   }
+  },
+  "aderQuinquiesPagare": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata-rottamazione-quinquies/come-pagare/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: Rottamazione-quinquies, come pagare",
+    "en": "Agenzia delle entrate-Riscossione: rottamazione-quinquies, how to pay"
+   }
+  },
+  "aderQuinquiesComunicazione": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata-rottamazione-quinquies/comunicazione-delle-somme-dovute/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: Comunicazione delle somme dovute (Rottamazione-quinquies)",
+    "en": "Agenzia delle entrate-Riscossione: statement of sums due (rottamazione-quinquies)"
+   }
+  },
+  "faqQuinquies": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/gruppo/FAQ_Rottamazione_Quinquies.pdf",
+   "label": {
+    "it": "FAQ Rottamazione-quinquies di Agenzia delle entrate-Riscossione, versione del 18 settembre 2026",
+    "en": "Agenzia delle entrate-Riscossione FAQ on rottamazione-quinquies, version of 18 September 2026"
+   }
+  },
+  "aderEnti": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata-rottamazione-quinquies-enti-territoriali/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: Rottamazione-quinquies dei carichi di regioni ed enti locali",
+    "en": "Agenzia delle entrate-Riscossione: rottamazione-quinquies for regional and local debts"
+   }
+  },
+  "aderEntiDomanda": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata-rottamazione-quinquies-enti-territoriali/domanda-di-adesione/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: domanda di adesione per i carichi di regioni ed enti locali",
+    "en": "Agenzia delle entrate-Riscossione: application for regional and local debts"
+   }
+  },
+  "aderEntiProspetto": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata-rottamazione-quinquies-enti-territoriali/prospetto-informativo/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: prospetto informativo dei carichi definibili (enti territoriali)",
+    "en": "Agenzia delle entrate-Riscossione: statement of eligible debts (local authorities)"
+   }
+  },
+  "aderEntiDopo": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata-rottamazione-quinquies-enti-territoriali/cosa-succede-dopo/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: cosa succede dopo la domanda (enti territoriali)",
+    "en": "Agenzia delle entrate-Riscossione: what happens after the application (local authorities)"
+   }
+  },
+  "elencoEnti": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/gruppo/Elenco-regioni-ed-enti-locali-rottamazione-quinquies.pdf",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: elenco delle regioni e degli enti locali che hanno aderito, aggiornato al 5 ottobre 2026",
+    "en": "Agenzia delle entrate-Riscossione: list of regions and local authorities taking part, updated 5 October 2026"
+   }
+  },
+  "faqEnti": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/gruppo/FAQ_Rottamazione_Quinquies_Enti_Territoriali.pdf",
+   "label": {
+    "it": "FAQ Rottamazione-quinquies enti territoriali di Agenzia delle entrate-Riscossione, versione del 15 ottobre 2026",
+    "en": "Agenzia delle entrate-Riscossione FAQ on the local-authority rottamazione-quinquies, version of 15 October 2026"
+   }
+  },
+  "aderQuater": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata/ambito-di-applicazione/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: Rottamazione-quater, ambito di applicazione",
+    "en": "Agenzia delle entrate-Riscossione: rottamazione-quater, scope"
+   }
+  },
+  "aderQuaterPagare": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata/come-pagare/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: Rottamazione-quater, come pagare",
+    "en": "Agenzia delle entrate-Riscossione: rottamazione-quater, how to pay"
+   }
+  },
+  "aderQuaterDopo": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/definizione-agevolata/cosa-succede-dopo/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: Rottamazione-quater, cosa succede dopo",
+    "en": "Agenzia delle entrate-Riscossione: rottamazione-quater, what happens next"
+   }
+  },
+  "faqQuater": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/export/.files/it/FAQ_DefinizioneAgevolata.pdf",
+   "label": {
+    "it": "FAQ Rottamazione-quater di Agenzia delle entrate-Riscossione",
+    "en": "Agenzia delle entrate-Riscossione FAQ on rottamazione-quater"
+   }
+  },
+  "aderRiammissione": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/riammissione-alla-definizione-agevolata/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: Riammissione alla Rottamazione-quater",
+    "en": "Agenzia delle entrate-Riscossione: readmission to rottamazione-quater"
+   }
+  },
+  "aderRate": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/cittadini/Rateizzazione/la-rateizzazione/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: la rateizzazione (art. 19 DPR 602/1973)",
+    "en": "Agenzia delle entrate-Riscossione: instalment plans (article 19 of Presidential Decree 602/1973)"
+   }
+  },
+  "aderRateDecadenza": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/cittadini/Rateizzazione/decadenza-dal-piano-di-rateizzazione/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: decadenza dal piano di rateizzazione",
+    "en": "Agenzia delle entrate-Riscossione: losing an instalment plan"
+   }
+  },
+  "aderRateTassi": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/cittadini/Rateizzazione/Enti-Rateizzazione/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: enti che autorizzano la rateizzazione e tassi di interesse",
+    "en": "Agenzia delle entrate-Riscossione: creditors allowing instalments and interest rates"
+   }
+  },
+  "aderScadenze": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/prossime-scadenze/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: prossime scadenze",
+    "en": "Agenzia delle entrate-Riscossione: upcoming due dates"
+   }
+  },
+  "aderStralcio": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/enti/stralcio-dei-debiti-fino-a-mille-euro/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: stralcio dei debiti fino a mille euro",
+    "en": "Agenzia delle entrate-Riscossione: write-off of debts up to one thousand euros"
+   }
+  },
+  "aderCartella": {
+   "url": "https://www.agenziaentrateriscossione.gov.it/opencms/it/Per-saperne-di-piu/documenti-della-riscossione/cartella/",
+   "label": {
+    "it": "Agenzia delle entrate-Riscossione: la cartella di pagamento",
+    "en": "Agenzia delle entrate-Riscossione: the payment notice (cartella)"
+   }
+  }
+ }
+}

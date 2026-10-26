@@ -1,0 +1,10 @@
+node_modules
+dist
+.astro
+scripts/__pycache__
+*.pyc
+.DS_Store
+.build.lock
+# Textes tiers (lois, FAQ, pages officielles) relus pour vérifier : jamais dans l historique git
+data/raw/
+data/textes-sources/

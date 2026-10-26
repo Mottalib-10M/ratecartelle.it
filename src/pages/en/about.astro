@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+import { P } from '../../lib/engine/params';
+const lang = 'en';
+const d = (iso: string) => displayDate(iso, 'en-GB');
+---
+<PageLayout title="IT Definizione Agevolata, about us: who does the figures" description="Who publishes IT Definizione Agevolata, why a personal calendar of rottamazione instalments, where the dates and rules come from, and how to report an error." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Who publishes {SITE_NAMES[lang]}</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>{SITE_NAMES[lang]} is published by Radif Partners. It answers the questions of people who joined an Italian tax-debt settlement: how much is each instalment, by which day, what happens if I miss one, and what is written off.</p>
+    <h2>Why this site</h2>
+    <p>Most writing on the rottamazione repeats the legal dates, which are the same for everyone. But each person has their own number of instalments, their own amount and their own payments already made. Here the calculation starts from your situation: the date and last useful day of each instalment, the estimated amount with interest, a file for your phone calendar, a lapse check using the rule that a payment covers the oldest instalment first, and a count of what is written off the bill. It also covers the quinquies for debts owed to comuni and regions, with applications open until {d(P.enti.domanda_entro)}.</p>
+    <h2>Where the rules come from</h2>
+    <p>From Law 199 of 2025, Decree-Law 38 of 2026 as amended by Law 113 of 2026, Law 197 of 2022, Decree-Law 202 of 2024 and Presidential Decree 602 of 1973, read in the Gazzetta Ufficiale and on Normattiva, and from the public FAQs of Agenzia delle entrate-Riscossione. Last reread: {d(P.retrieved_at)}. Everything is explained in the <a href={route('method', lang)}>method</a>.</p>
+    <h2>What we are not</h2>
+    <p>Radif Partners is not Agenzia delle entrate-Riscossione, the Agenzia delle entrate, INPS, a comune or any public body, nor an accountant or a law firm. We sell nothing, take no commission, recommend no professional and ask for no contact details. Only the statement of sums due you received is binding.</p>
+    <h2>Funding and data</h2><p>The site is free and needs no sign-up. Calculations run in your browser: the amounts, instalments and dates you type are neither sent nor stored. If there is ever advertising, it will never sit above the calendar and will never sell advice or loans.</p>
+    <h2>Why in English too</h2><p>Every page exists in Italian and English, for people abroad with old Italian tax bills and for foreigners living in Italy: the collection vocabulary (carico, ruolo, Comunicazione, decadenza) is explained.</p>
+    <h2>Write to us</h2><p>A wrong date, a changed rule, a new text published: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. See also the <a href={route('editorial', lang)}>editorial policy</a> and the <a href={route('terms', lang)}>legal notice</a>.</p>
+    <p class="text-sm text-navy-600">Texts reread on <time datetime={P.retrieved_at}>{d(P.retrieved_at)}</time>.</p>
+  </div>
+</PageLayout>
